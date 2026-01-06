@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card bg-black border-lime p-4 shadow-lg">
+                <h2 class="text-lime text-center mb-4">Pré-Avaliação (Anamnese)</h2>
+                <form action="/avaliacao" method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">Nome Completo</label>
+                        <input type="text" name="nome" class="form-control bg-dark text-white border-secondary" required>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Gênero</label>
+                            <select name="genero" class="form-select bg-dark text-white border-secondary">
+                                <option value="Masculino">Masculino</option>
+                                <option value="Feminino">Feminino</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Idade</label>
+                            <input type="number" name="idade" class="form-control bg-dark text-white border-secondary" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Altura (cm)</label>
+                            <input type="number" name="altura" class="form-control bg-dark text-white border-secondary" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Peso (kg)</label>
+                            <input type="number" step="0.1" name="peso" class="form-control bg-dark text-white border-secondary" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Objetivo Principal</label>
+                        <select name="objetivo" class="form-select bg-dark text-white border-secondary">
+                            <option value="Emagrecimento">Emagrecimento</option>
+                            <option value="Hipertrofia">Hipertrofia</option>
+                            <option value="Condicionamento">Condicionamento Físico</option>
+                            <option value="Saude">Saúde/Longevidade</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Nível de Atividade</label>
+                        <select name="atividade" class="form-select bg-dark text-white border-secondary">
+                            <option value="Sedentario">Sedentário</option>
+                            <option value="Leve">Atividade Leve</option>
+                            <option value="Moderado">Moderado</option>
+                            <option value="Atleta">Atleta</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Possui lesões ou restrições médicas?</label>
+                        <textarea name="restricoes" class="form-control bg-dark text-white border-secondary" rows="3" placeholder="Exemplo: Dores na Lombar"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-lime w-100 fw-bold py-3 text-uppercase">Enviar para Consultoria</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

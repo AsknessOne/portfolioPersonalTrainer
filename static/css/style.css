@@ -1,0 +1,153 @@
+:root {
+  --red-main: #C1121F;
+  --red-hover: #9B0D17;
+
+  --black-main: #0F0F0F;
+  --black-soft: #1A1A1A;
+
+  --white-main: #FFFFFF;
+  --white-soft: #F8F9FA;
+
+  --gray-light: #E5E5E5;
+  --gray-medium: #6C757D;
+  --gray-dark: #343A40;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.text {
+    color: var(--gray-light);
+}
+
+.btn-lime {
+    background-color: var(--red-main);
+    color: black;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-lime:hover {
+    background-color: #9B0D17;
+    color: white;
+}
+
+.hero-section {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://static.vecteezy.com/system/resources/previews/037/235/105/non_2x/ai-generated-gym-with-many-equipments-free-photo.jpg') no-repeat center center/cover;
+}
+
+.fw-black {
+    font-weight: 900;
+}
+
+/* Custom placeholder colors for form */
+.form-control::placeholder {
+    color: #6c757d;
+}
+
+#teste {
+    /* O gradiente cria uma camada escura sobre a imagem */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                      url('../imagens/avaliacao.jpeg'); 
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #444; /* Borda sutil */
+    transition: all 0.4s ease-in-out;
+    height: 200px;
+}
+
+/* Efeito ao passar o mouse para dar destaque */
+#teste:hover {
+    /* Clareia um pouco a imagem no hover e destaca a borda */
+    background-image: 
+                      url('../imagens/avaliacao.jpeg');
+    border-color: #b93f2a; /* Muda a borda para Verde Limão */
+    transform: translateY(-5px); /* Efeito de flutuar */
+}
+
+#plan {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                    url('../imagens/planejamento.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #444; /* Borda sutil */
+    transition: all 0.4s ease-in-out;
+    height: 200px;
+}
+
+/* Efeito ao passar o mouse para dar destaque */
+#plan:hover {
+    /* Clareia um pouco a imagem no hover e destaca a borda */
+    background-image: 
+                      url('../imagens/planejamento.png');
+    border-color: #b93f2a; /* Muda a borda para Verde Limão */
+    transform: translateY(-3px); /* Efeito de flutuar */
+}
+
+#acomp {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+                    url('../imagens/acompanhamento.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #444;
+    transition: all 0.4s ease-in-out;
+    height: 200px;
+}
+#acomp:hover {
+    background-image: url('../imagens/acompanhamento.png');
+    border-color: #b93f2a;
+    transform: translateY(-5px);
+}
+
+.faq-section h3 {
+  color: #FFFFFF;
+}
+
+.faq-section .accordion-item {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #343A40;
+}
+
+.faq-section .accordion-button {
+  background-color: transparent;
+  color: #FFFFFF;
+}
+
+.faq-section .accordion-button::after {
+  filter: invert(1);
+}
+
+.faq-section .accordion-body {
+  color: #E5E5E5;
+  line-height: 1.6;
+}
+
+.foto-perfil {background-image: url('../imagens/perfil.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    width: 400px;
+}
+
+/* Carrossel */
+.carousel-item p {
+    font-size: 1.2rem; 
+    font-weight: 400;
+    padding: 15px;
+    color: #333;
+  }
+
+.carousel-slide {
+    background: #E5E5E5;
+    height: 60px;
+}
