@@ -5,8 +5,10 @@ from urllib.parse import quote_plus
 
 load_dotenv()
 
+
 app = Flask(__name__)
-app.secret_key = os.getenv("FLASK_SECRET_KEY")
+app.secret_key = os.environ.get("SECRET_KEY", "fallback-dev")
+
 
 WHATSAPP_NUMBER = os.getenv("WHATSAPP_NUMBER")
 
