@@ -1,27 +1,26 @@
 import os
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect
 from dotenv import load_dotenv
 from urllib.parse import quote_plus
 
 load_dotenv()
 
-
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "fallback-dev")
 
-
 WHATSAPP_NUMBER = os.getenv("WHATSAPP_NUMBER")
-
 
 @app.route('/')
 def index():
-    show_modal = session.pop('show_modal', False)
-    return render_template('index.html', show_modal=show_modal)
+    return render_template('index.html')
 
 @app.route('/avaliacao', methods=['GET', 'POST'])
 def avaliacao():
     if request.method == 'POST':
-        # Dados do formulário
+
+        if not WHATSAPP_NUMBER:
+            return "Número do WhatsApp não configurado", 500
+
         nome = request.form.get('nome')
         idade = request.form.get('idade')
         altura = request.form.get('altura')
@@ -30,9 +29,8 @@ def avaliacao():
         atividade = request.form.get('atividade')
         restricoes = request.form.get('restricoes')
 
-        # Mensagem formatada para o WhatsApp
         mensagem = f"""
-Olá, Renato! 
+Olá, Renato!
 
 Acabei de preencher a pré-avaliação no seu site.
 Seguem meus dados:
@@ -52,20 +50,14 @@ Gostaria de conversar sobre a consultoria personalizada.
 """
 
         texto = quote_plus(mensagem)
-
-        whatsapp_url = (
-            f"https://wa.me/{WHATSAPP_NUMBER}"f"?text={texto}"
-        )
+        whatsapp_url = f"https://wa.me/{WHATSAPP_NUMBER}?text={texto}"
 
         return redirect(whatsapp_url)
 
-    # GET → abre o formulário
     return render_template('assessment.html')
 
-
 if __name__ == "__main__":
-    app.run()
-
+    app.run(debug=True)
 
 
     
