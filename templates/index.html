@@ -1,120 +1,250 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<section class="hero-section d-flex align-items-center text-center">
-    <div class="container">
-        <h1 class="display-1 fw-black text-uppercase">Supere seus <span class="text-lime">Limites</span></h1>
-        <p class="lead mb-4">Treinamento personalizado com foco em resultados reais e longevidade.</p>
-        <a href="/avaliacao" class="btn btn-lime btn-lg px-5">Começar Agora</a>
-    </div>
+<!-- HERO -->
+<section class="hero-section d-flex align-items-center text-center min-vh-100">
+  <div class="container">
+    <h1 class="hero-title text-uppercase">
+      Supere seus <span class="word-highlight">limites</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Treinamento personalizado com foco em resultados reais e longevidade.
+    </p>
+
+    <a href="/avaliacao" class="btn btn-start btn-lg px-5 mt-3">
+      Começar Agora
+    </a>
+  </div>
 </section>
 
-<section id="sobre" class="py-5 container">
-    <div class="row align-items-center">
-        <div class="col-md-6">
-            <h2 class="text-lime fw-bold">Renato Severo Maciel</h2>
-            <p>Especialista em fisiologia do exercício e transformação corporal. Com anos de experiência no mercado fitness, ajudo pessoas a alcançarem sua melhor versão através de ciência e disciplina.</p>
-        </div>
-        <div class="col-md-6 text-center">
-             <div class="p-5r ounded-3 foto-perfil"></div>
-        </div>
+<!-- SOBRE -->
+<section id="sobre" class="perfil py-5">
+  <div class="container">
+    <div class="row align-items-center g-4">
+
+      <div class="col-md-6">
+        <h2 class="text-lime fw-bold mb-2">Renato Severo Maciel</h2>
+        <p class="text-secondary small">
+          Personal Trainer • Alta Performance • Saúde
+        </p>
+
+        <p>
+          Especialista em fisiologia do exercício e transformação corporal.
+          Ajudo pessoas a alcançarem sua melhor versão através de ciência,
+          disciplina e acompanhamento contínuo.
+        </p>
+      </div>
+
+      <div class="col-md-6 text-center">
+        <div class="foto-perfil rounded-3 mx-auto"></div>
+      </div>
+
     </div>
+  </div>
 </section>
 
-<section class="bg-black py-5">
-    <div class="container">
-        <h2 class="text-center mb-5 fw-bold">Metodologia de Trabalho</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card bg-dark border-secondary p-3" id="teste">
-                    <h4 class="text"> Avaliação</h4>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card bg-dark border-secondary p-3" id="plan">
-                    <h4 class="text"> Planejamento</h4>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card bg-dark border-secondary p-3" id="acomp">
-                    <h4 class="text"> Acompanhamento</h4>
-                </div>
-            </div>
-        </div>
+<section id="metodo" class="method-section bg-black">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2 class="fw-black text-uppercase">Metodologia de Alta Performance</h2>
+      <p class="text-secondary mt-2">
+        Um processo estruturado para evolução contínua, segura e mensurável.
+      </p>
     </div>
+
+    <div class="row g-4">
+
+      <!-- CARD 1 -->
+      <div class="col-md-4">
+        <div class="method-card method-avaliacao">
+          <span class="method-step">01</span>
+          <div class="method-card-content">
+            <h4>Avaliação</h4>
+            <p>Análise física completa, histórico e definição clara de objetivos.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="col-md-4">
+        <div class="method-card method-planejamento">
+          <span class="method-step">02</span>
+          <div class="method-card-content">
+            <h4>Planejamento</h4>
+            <p>Treinos personalizados com progressão inteligente e foco em resultados.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="col-md-4">
+        <div class="method-card method-acompanhamento">
+          <span class="method-step">03</span>
+          <div class="method-card-content">
+            <h4>Acompanhamento</h4>
+            <p>Ajustes contínuos baseados na evolução e no feedback do aluno.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-    <div id="carouselExample" class="carousel-slide" data-bs-ride="carousel" data-bs-interval="3000">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <p class="d-block w-100 text-center"> + 3 ANOS DE EXPERIÊNCIA </p>
-            </div>
 
-            <div class="carousel-item">
-                <p class="d-block w-100 text-center"> Dezenas de alunos satisfeitos. </p>
-            </div>
+<!-- CARROSSEL / PROVA SOCIAL -->
+<section class="carrousel">
+  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
 
-            <div class="carousel-item">
-                <p class="d-block w-100 text-center"> Treinos personalizados para quem busca evolução de verdade. </p>
-            </div>
+    <div class="carousel-inner text-center">
 
-            
-        </div>
+      <div class="carousel-item active">
+        <p class="fs-4 fw-bold mb-0">Dezenas de alunos satisfeitos!</p>
+      </div>
+
+      <div class="carousel-item">
+        <p class="fs-4 fw-bold mb-0">Treinamento baseado em ciência e individualidade.</p>
+      </div>
+
+      <div class="carousel-item">
+        <p class="fs-4 fw-bold mb-0">
+          Treinos personalizados para evolução real.
+        </p>
+      </div>
+      <div class="carousel-item">
+        <p class="fs-4 fw-bold mb-0">
+          Método. Constância. Resultado.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="resultados" class="results-section">
+  <div class="container">
+
+    <!-- Título -->
+    <div class="text-center mb-5">
+      <h2 class="fw-black text-uppercase">Resultados Reais</h2>
+      <p class="text-secondary mt-2">
+        Transformações construídas com consistência, método e acompanhamento.
+      </p>
     </div>
 
+    <!-- Cards -->
+    <div class="row g-4">
 
-
-
-    <section id="faq" class="container my-5 faq-section">
-        <h3 class="text-left my-3">Ficou alguma Dúvida?</h3>
-
-        <div class="accordion" id="perguntas">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        O serviço é indicado para iniciantes?
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                    data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Sim. O acompanhamento é totalmente personalizado e adaptado ao nível
-          de condicionamento de cada pessoa, respeitando limitações e objetivos
-          individuais.
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Em quanto tempo posso começar a ver resultados?
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                    data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Os resultados variam de acordo com fatores individuais como frequência,
-          rotina e comprometimento.
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFour">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        Preciso já estar treinando para começar?
-                    </button>
-                </h2>
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                    data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        O trabalho começa com uma avaliação inicial, permitindo que
-          pessoas sedentárias iniciem com segurança e progressão adequada.
-                    </div>
-                </div>
-            </div>
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="result-card">
+          <div class="result-image" style="background-image: url('../static/imagens/aluno1.jpg');"></div>
+          <div class="result-content">
+            <h5>Vinicius• 28 dias</h5>
+            <p>Redução de gordura e ganho de resistência física.</p>
+          </div>
         </div>
-    </section>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="result-card">
+          <div class="result-image" style="background-image: url('../static/imagens/aluno2.jpg');"></div>
+          <div class="result-content">
+            <h5>Amanda • 3 meses</h5>
+            <p>Melhora da postura e tonificação dos musculos.</p>
+          </div>
+        </div>
+      </div>
+
+       <div class="col-md-4">
+        <div class="result-card">
+          <div class="result-image" style="background-image: url('../static/imagens/aluno4.jpg');"></div>
+          <div class="result-content">
+            <h5>Kelly • 30 dias </h5>
+            <p>Recomposição corporal e melhora da postura.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-5">
+      <a href="/avaliacao" class="btn btn-lime btn-lg px-5">
+        Começar minha evolução
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- FAQ -->
+
+<section id="faq" class="container my-5 faq-section">
+  <h6 class="text-uppercase text-secondary">FAQ</h6>
+  <h3 class="my-3">Ficou alguma dúvida?</h3>
+
+  <div class="accordion" id="faqAccordion">
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faqOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapseOne" aria-expanded="true">
+          O serviço é indicado para iniciantes?
+        </button>
+      </h2>
+
+      <div id="collapseOne" class="accordion-collapse collapse show"
+        data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Sim. O acompanhamento é totalmente personalizado e adaptado ao nível
+          de condicionamento de cada pessoa.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faqTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapseTwo">
+          Em quanto tempo posso começar a ver resultados?
+        </button>
+      </h2>
+
+      <div id="collapseTwo" class="accordion-collapse collapse"
+        data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Os resultados variam conforme rotina, frequência e comprometimento.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="faqThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapseThree">
+          Preciso já estar treinando para começar?
+        </button>
+      </h2>
+
+      <div id="collapseThree" class="accordion-collapse collapse"
+        data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Não. O processo começa com avaliação e progressão segura.
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+</section>
+
+
+
+
 {% endblock %}

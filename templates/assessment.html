@@ -1,71 +1,147 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card bg-black border-lime p-4 shadow-lg">
-                <h2 class="text-lime text-center mb-4">Pré-Avaliação (Anamnese)</h2>
-                <form action="/avaliacao" method="POST">
-                    <div class="mb-3">
-                        <label class="form-label">Nome Completo</label>
-                        <input type="text" name="nome" class="form-control bg-dark text-white border-secondary" required>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-md-4 mb-3">
-                            <label class="form-label">Gênero</label>
-                            <select name="genero" class="form-select bg-dark text-white border-secondary">
-                                <option value="Masculino">Masculino</option>
-                                <option value="Feminino">Feminino</option>
-                                <option value="Outro">Outro</option>
+<section class="avaliacao-section">
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <div class="col-lg-7 col-md-9">
+                <article class="avaliacao-card">
+
+                    <!-- Cabeçalho -->
+                    <header class="avaliacao-header text-center mb-4">
+                        <h2 class="avaliacao-title">Pré-Avaliação</h2>
+                        <p class="avaliacao-subtitle">
+                            Responda com atenção para que possamos criar um plano personalizado.
+                        </p>
+                    </header>
+
+                    <!-- Formulário -->
+                    <form action="/avaliacao" method="POST" class="avaliacao-form">
+
+                        <!-- Nome -->
+                        <div class="mb-3">
+                            <label class="form-label">Nome completo</label>
+                            <input type="text" name="nome" class="form-control form-dark" required>
+                        </div>
+
+                        <!-- Dados básicos -->
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Gênero</label>
+                                <select name="genero" class="form-select form-dark">
+                                    <option>Masculino</option>
+                                    <option>Feminino</option>
+                                    <option>Outro</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Idade</label>
+                                <input type="number" name="idade" class="form-control form-dark" required>
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Altura (cm)</label>
+                                <input type="number" name="altura" class="form-control form-dark" required>
+                            </div>
+                        </div>
+
+                        <!-- Peso -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Peso (kg)</label>
+                                <input type="number" step="0.1" name="peso" class="form-control form-dark" required>
+                            </div>
+                        </div>
+
+                        <!-- Objetivo -->
+                        <div class="mb-3">
+                            <label class="form-label">Objetivo principal</label>
+                            <select name="objetivo" class="form-select form-dark">
+                                <option>Emagrecimento</option>
+                                <option>Hipertrofia</option>
+                                <option>Condicionamento físico</option>
+                                <option>Saúde e longevidade</option>
                             </select>
                         </div>
-                        <div class="col-md-4 mb-3">
-                            <label class="form-label">Idade</label>
-                            <input type="number" name="idade" class="form-control bg-dark text-white border-secondary" required>
+
+                        <!-- Atividade -->
+                        <div class="mb-3">
+                            <label class="form-label">Nível de atividade</label>
+                            <select name="atividade" class="form-select form-dark">
+                                <option>Sedentário</option>
+                                <option>Leve</option>
+                                <option>Moderado</option>
+                                <option>Atleta</option>
+                            </select>
                         </div>
-                        <div class="col-md-4 mb-3">
-                            <label class="form-label">Altura (cm)</label>
-                            <input type="number" name="altura" class="form-control bg-dark text-white border-secondary" required>
+
+                        <!-- Restrições -->
+                        <div class="mb-4">
+                            <label class="form-label">Lesões ou restrições médicas</label>
+                            <textarea name="restricoes" rows="3" class="form-control form-dark"
+                                placeholder="Ex: dores na lombar, joelho, cirurgia recente..."></textarea>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Peso (kg)</label>
-                            <input type="number" step="0.1" name="peso" class="form-control bg-dark text-white border-secondary" required>
-                        </div>
-                    </div>
+                        <!-- CTA -->
+                        <button type="button"
+  class="btn btn-lime btn-lg w-100 text-uppercase fw-bold"
+  data-bs-toggle="modal"
+  data-bs-target="#whatsappConfirmModal">
+  Enviar para consultoria
+</button>
+<div class="modal fade" id="whatsappConfirmModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-black text-light rounded-4 shadow-lg">
 
-                    <div class="mb-3">
-                        <label class="form-label">Objetivo Principal</label>
-                        <select name="objetivo" class="form-select bg-dark text-white border-secondary">
-                            <option value="Emagrecimento">Emagrecimento</option>
-                            <option value="Hipertrofia">Hipertrofia</option>
-                            <option value="Condicionamento">Condicionamento Físico</option>
-                            <option value="Saude">Saúde/Longevidade</option>
-                        </select>
-                    </div>
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold">
+          Confirmação de envio
+        </h5>
+        <button type="button" class="btn-close btn-close-white"
+          data-bs-dismiss="modal"></button>
+      </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Nível de Atividade</label>
-                        <select name="atividade" class="form-select bg-dark text-white border-secondary">
-                            <option value="Sedentario">Sedentário</option>
-                            <option value="Leve">Atividade Leve</option>
-                            <option value="Moderado">Moderado</option>
-                            <option value="Atleta">Atleta</option>
-                        </select>
-                    </div>
+      <div class="modal-body text-center">
+        <p class="mb-3">
+          Ao continuar, você será redirecionado para o WhatsApp com
+          sua mensagem de pré-avaliação pronta para envio.
+        </p>
 
-                    <div class="mb-4">
-                        <label class="form-label">Possui lesões ou restrições médicas?</label>
-                        <textarea name="restricoes" class="form-control bg-dark text-white border-secondary" rows="3" placeholder="Exemplo: Dores na Lombar"></textarea>
-                    </div>
+        <p class="text-secondary small">
+          O envio só será concluído após sua confirmação no WhatsApp.
+        </p>
+      </div>
 
-                    <button type="submit" class="btn btn-lime w-100 fw-bold py-3 text-uppercase">Enviar para Consultoria</button>
-                </form>
+      <div class="modal-footer border-0 justify-content-center">
+        <button type="button"
+          class="btn btn-outline-light px-4"
+          data-bs-dismiss="modal">
+          Cancelar
+        </button>
+
+        <button type="submit"
+          class="btn btn-lime px-4 fw-bold">
+          Continuar
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+                    </form>
+                    
+
+                </article>
             </div>
+
         </div>
     </div>
-</div>
+</section>
+
+
 {% endblock %}
